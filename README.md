@@ -8,10 +8,10 @@ vvmware: Vvmware
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.vvmware](https://galaxy.ansible.com/devops-toolbox.vvmware)
+[https://galaxy.ansible.com/devopstoolbox.vvmware](https://galaxy.ansible.com/devopstoolbox.vvmware)
 
 ```bash
-ansible-galaxy install devops-toolbox.vvmware
+ansible-galaxy install devopstoolbox.vvmware
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: vvmware is configured
       import_role:
-        name: devops-toolbox.vvmware
+        name: devopstoolbox.vvmware
       vars:
         vvmware_packages_state: present
         vvmware_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
