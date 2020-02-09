@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+vvmware_repos_create: "{{ _vvmware_repos_create['all']
+  | union ( _vvmware_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+vvmware_repos_download: "{{ _vvmware_repos_download['all']
+  | union ( _vvmware_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+vvmware_templates_copy: "{{ _vvmware_templates_copy['all']
+  | union ( _vvmware_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+vvmware_services_enable: "{{ _vvmware_services_enable['all']
+  | union ( _vvmware_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+vvmware_selinux_enable: "{{ _vvmware_selinux_enable['all']
+  | union ( _vvmware_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+vvmware_packages_remove: "{{ _vvmware_packages_remove['all']
+  | union ( _vvmware_packages_remove[my_os]
+  | default([]) ) }}"
+vvmware_packages_repos: "{{ _vvmware_packages_repos['all']
+  | union ( _vvmware_packages_repos[my_os]
+  | default([]) ) }}"
+vvmware_packages_prereq: "{{ _vvmware_packages_prereq['all']
+  | union ( _vvmware_packages_prereq[my_os]
+  | default([]) ) }}"
+vvmware_packages_install: "{{ _vvmware_packages_install['all']
+  | union ( _vvmware_packages_install[my_os]
+  | default([]) ) }}"
